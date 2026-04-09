@@ -1,0 +1,902 @@
+[
+  {
+    "item_id": "ARCCH_Mercury_417145",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7247030",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_400243",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7205818",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7174195",
+    "dataset": "ARC-Challenge",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7144795",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7270305",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7175683",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7038133",
+    "dataset": "ARC-Challenge",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_MDSA_2009_8_44",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_ACTAAP_2014_7_11",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_MCAS_2016_5_15",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_NCEOGA_2013_5_38",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7013003",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_SC_401359",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7213255",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_MDSA_2009_4_30",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_411013",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_417139",
+    "dataset": "ARC-Challenge",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7202160",
+    "dataset": "ARC-Challenge",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7212468",
+    "dataset": "ARC-Challenge",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7084298",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7126683",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_SC_401304",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_417140",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7223353",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_ACTAAP_2010_7_13",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_400893",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_408090",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7211348",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_MDSA_2007_8_19",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7168630",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7058030",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_SC_413243",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7233800",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7186778",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_ACTAAP_2007_7_25",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_MDSA_2007_8_16",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_SC_415706",
+    "dataset": "ARC-Challenge",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_SC_407674",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7233748",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_SC_401653",
+    "dataset": "ARC-Challenge",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_MCAS_2011_5_17673",
+    "dataset": "ARC-Challenge",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_SC_401606",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7099365",
+    "dataset": "ARC-Challenge",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCCH_Mercury_7069458",
+    "dataset": "ARC-Challenge",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_TIMSS_2011_8_pg111",
+    "dataset": "ARC-Easy",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_LEAP__5_10310",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7158708",
+    "dataset": "ARC-Easy",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7214200",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_ACTAAP_2014_7_9",
+    "dataset": "ARC-Easy",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7015593",
+    "dataset": "ARC-Easy",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7064348",
+    "dataset": "ARC-Easy",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7218838",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_SC_415479",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_TAKS_2009_5_38",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_SC_401182",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_TIMSS_2003_8_pg86",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7219835",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7283815",
+    "dataset": "ARC-Easy",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_405064",
+    "dataset": "ARC-Easy",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_SC_409692",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7194285",
+    "dataset": "ARC-Easy",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_MDSA_2011_8_43",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_SC_401174",
+    "dataset": "ARC-Easy",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_177853",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_SC_406063",
+    "dataset": "ARC-Easy",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_SC_407501",
+    "dataset": "ARC-Easy",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_Mercury_7235900",
+    "dataset": "ARC-Easy",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "ARCEZ_AIMS_2008_8_20",
+    "dataset": "ARC-Easy",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_5470",
+    "dataset": "CosmosQA",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_20347",
+    "dataset": "CosmosQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_1071",
+    "dataset": "CosmosQA",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_25065",
+    "dataset": "CosmosQA",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_14477",
+    "dataset": "CosmosQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_2573",
+    "dataset": "CosmosQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_22949",
+    "dataset": "CosmosQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_3434",
+    "dataset": "CosmosQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_19057",
+    "dataset": "CosmosQA",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_2418",
+    "dataset": "CosmosQA",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_5478",
+    "dataset": "CosmosQA",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_20113",
+    "dataset": "CosmosQA",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "cosmosqa_728",
+    "dataset": "CosmosQA",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_6163",
+    "dataset": "HellaSwag",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_37856",
+    "dataset": "HellaSwag",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_8690",
+    "dataset": "HellaSwag",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_12138",
+    "dataset": "HellaSwag",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_31066",
+    "dataset": "HellaSwag",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_11547",
+    "dataset": "HellaSwag",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_11857",
+    "dataset": "HellaSwag",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_3446",
+    "dataset": "HellaSwag",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_28875",
+    "dataset": "HellaSwag",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_35507",
+    "dataset": "HellaSwag",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_21521",
+    "dataset": "HellaSwag",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_30745",
+    "dataset": "HellaSwag",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_39703",
+    "dataset": "HellaSwag",
+    "gold": "D",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_17147",
+    "dataset": "HellaSwag",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_1678",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_8818",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_1072",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_15934",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_16034",
+    "dataset": "PIQA",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_3466",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_9786",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_3673",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_14738",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_14836",
+    "dataset": "PIQA",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_9451",
+    "dataset": "PIQA",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "physicaliqa_12349",
+    "dataset": "PIQA",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_25723",
+    "dataset": "SocialIQa",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_1081",
+    "dataset": "SocialIQa",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_7718",
+    "dataset": "SocialIQa",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_10601",
+    "dataset": "SocialIQa",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_9647",
+    "dataset": "SocialIQa",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_32076",
+    "dataset": "SocialIQa",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_25205",
+    "dataset": "SocialIQa",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_3778",
+    "dataset": "SocialIQa",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_18577",
+    "dataset": "SocialIQa",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_3469",
+    "dataset": "SocialIQa",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_32044",
+    "dataset": "SocialIQa",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_1400",
+    "dataset": "SocialIQa",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_635",
+    "dataset": "SocialIQa",
+    "gold": "C",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_29240",
+    "dataset": "SocialIQa",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "socialiqa_27099",
+    "dataset": "SocialIQa",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_643",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_5921",
+    "dataset": "WinoGrande",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_1797",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_7402",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_1154",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_652",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_742",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_13753",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_28054",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_35109",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_18359",
+    "dataset": "WinoGrande",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_89",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_4799",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_39673",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "winogrande_20894",
+    "dataset": "WinoGrande",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_93767",
+    "dataset": "aNLI",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_152787",
+    "dataset": "aNLI",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_86563",
+    "dataset": "aNLI",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_92735",
+    "dataset": "aNLI",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_389",
+    "dataset": "aNLI",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_490",
+    "dataset": "aNLI",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_18494",
+    "dataset": "aNLI",
+    "gold": "B",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_5825",
+    "dataset": "aNLI",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_687",
+    "dataset": "aNLI",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "anli_89173",
+    "dataset": "aNLI",
+    "gold": "A",
+    "n_critiques": 4
+  },
+  {
+    "item_id": "hellaswag_17128",
+    "dataset": "HellaSwag",
+    "gold": "C",
+    "n_critiques": 4
+  }
+]
