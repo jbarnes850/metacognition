@@ -1,0 +1,125 @@
+{
+  "model": "Qwen3.6-35B-A3B",
+  "source_summary": {
+    "accuracy": 0.8369453044375645,
+    "d_prime": 1.3474841128810076,
+    "d_prime_ci95": [
+      1.1338665320703212,
+      1.5820457147680462
+    ],
+    "hit_rate": 0.6194968553459119,
+    "false_alarm_rate": 0.14839901477832512,
+    "n_trials": 969
+  },
+  "E_task_decomp": {
+    "n_sci": 397,
+    "n_com": 572,
+    "cos_global_sci": 0.49326378107070923,
+    "cos_global_com": 0.6937260627746582,
+    "cos_sci_com": 0.4149633049964905,
+    "auroc_sci_by_global": 0.7634408602150538,
+    "auroc_com_by_global": 0.7016516730924842,
+    "auroc_sci_by_sci": 0.8762559492332099,
+    "auroc_com_by_com": 0.7156774080949435,
+    "auroc_sci_by_com": 0.7498677948175569,
+    "auroc_com_by_sci": 0.6576863883732369,
+    "citation": "Maskey, Dras, Naseem (2026) arxiv 2603.27518",
+    "prediction": "If the commonsense ceiling reflects a missing task-specific subspace, auroc_com_by_com > auroc_com_by_global AND cos_sci_com < cos_global_sci."
+  },
+  "E_var2d": {
+    "median_entropy": 0.843101693205346,
+    "median_varentropy": 1.0221582444035593,
+    "cells": {
+      "high_H__high_V": {
+        "n": 218,
+        "far": 0.26605504587155965
+      },
+      "high_H__low_V": {
+        "n": 188,
+        "far": 0.07446808510638298
+      },
+      "low_H__high_V": {
+        "n": 188,
+        "far": 0.17553191489361702
+      },
+      "low_H__low_V": {
+        "n": 217,
+        "far": 0.06912442396313365
+      }
+    },
+    "blog_reference": "Qwen: high-V protective, FAR gap 17-31pp. E4B: high-V is risk, FAR gap 32pp reversed. Qwen3.6 is a new data point on this axis.",
+    "citation": "Ahmed, Ong, DeLuca (2026) arxiv 2603.24929"
+  },
+  "E_cosine_domain": {
+    "cosine_all": 0.9353249073028564,
+    "cosine_science": 0.6913083791732788,
+    "cosine_commonsense": 0.8050516247749329,
+    "n_science": 397,
+    "n_commonsense": 572,
+    "prediction": "If the commonsense ceiling reflects failed integration of confidence and control specifically on commonsense, cosine_commonsense < cosine_science.",
+    "blog_reference": "At 9B pooled cosine=0.30; per-domain not reported."
+  },
+  "E_conf_gate": {
+    "overall": {
+      "median_logprob": -0.34246721863746643,
+      "confident_far": 0.1425287356321839,
+      "uncertain_far": 0.15425531914893617,
+      "confident_n_noise": 435,
+      "uncertain_n_noise": 376,
+      "gap_unc_minus_conf": 0.011726583516752265
+    },
+    "science": {
+      "median_logprob": -0.4887346625328064,
+      "confident_far": 0.046632124352331605,
+      "uncertain_far": 0.05847953216374269,
+      "confident_n_noise": 193,
+      "uncertain_n_noise": 171,
+      "gap_unc_minus_conf": 0.011847407811411081
+    },
+    "commonsense": {
+      "median_logprob": -0.26419399678707123,
+      "confident_far": 0.16,
+      "uncertain_far": 0.3096446700507614,
+      "confident_n_noise": 250,
+      "uncertain_n_noise": 197,
+      "gap_unc_minus_conf": 0.1496446700507614
+    },
+    "blog_reference": "9B pooled gap: unc=0.511, conf=0.217, gap=0.29",
+    "citation": "Kadavath et al. (2022), Kumaran et al. (2026)"
+  },
+  "E_resp_length": {
+    "CORRECT_REJECTION__com": {
+      "n": 346,
+      "mean_n_tokens": 2.0
+    },
+    "CORRECT_REJECTION__sci": {
+      "n": 345,
+      "mean_n_tokens": 2.0231884057971015
+    },
+    "HIT__com": {
+      "n": 77,
+      "mean_n_tokens": 2.0
+    },
+    "MISS__com": {
+      "n": 48,
+      "mean_n_tokens": 2.0
+    },
+    "FALSE_ALARM__com": {
+      "n": 101,
+      "mean_n_tokens": 2.0
+    },
+    "HIT__sci": {
+      "n": 21,
+      "mean_n_tokens": 5.0
+    },
+    "FALSE_ALARM__sci": {
+      "n": 19,
+      "mean_n_tokens": 2.0526315789473686
+    },
+    "MISS__sci": {
+      "n": 12,
+      "mean_n_tokens": 2.0
+    }
+  },
+  "elapsed_s": 0.06417202949523926
+}

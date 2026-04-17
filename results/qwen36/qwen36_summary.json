@@ -1,0 +1,201 @@
+{
+  "model": "Qwen3.6-35B-A3B",
+  "backend": "sglang-0.5.9-t5 return_hidden_states (final layer only)",
+  "n_items": 969,
+  "accuracy": 0.8369453044375645,
+  "n_trials": 969,
+  "n_signal_trials": 158,
+  "n_noise_trials": 811,
+  "d_prime": 1.3474841128810076,
+  "d_prime_ci95": [
+    1.1338665320703212,
+    1.5820457147680462
+  ],
+  "criterion_c": 0.36958243966477455,
+  "hit_rate": 0.6194968553459119,
+  "false_alarm_rate": 0.14839901477832512,
+  "hits": 98,
+  "misses": 60,
+  "false_alarms": 120,
+  "correct_rejections": 691,
+  "per_dataset": {
+    "ARC-Challenge": {
+      "d_prime": 1.6886681863784856,
+      "d_prime_ci95": [
+        1.205655894280857,
+        2.261524426886147
+      ],
+      "hit_rate": 0.5892857142857143,
+      "false_alarm_rate": 0.07173913043478261,
+      "criterion_c": 0.6186261393290834,
+      "n_signal": 27,
+      "n_noise": 229,
+      "hits": 16,
+      "false_alarms": 16
+    },
+    "ARC-Easy": {
+      "d_prime": 2.7391739388896585,
+      "d_prime_ci95": [
+        1.923247109418839,
+        3.754587258904931
+      ],
+      "hit_rate": 0.7857142857142857,
+      "false_alarm_rate": 0.025735294117647058,
+      "criterion_c": 0.5779483617014548,
+      "n_signal": 6,
+      "n_noise": 135,
+      "hits": 5,
+      "false_alarms": 3
+    },
+    "CosmosQA": {
+      "d_prime": 0.6118530267732305,
+      "d_prime_ci95": [
+        0.03801361187586487,
+        1.2162498206183228
+      ],
+      "hit_rate": 0.4696969696969697,
+      "false_alarm_rate": 0.2457627118644068,
+      "criterion_c": 0.3819581365070036,
+      "n_signal": 32,
+      "n_noise": 58,
+      "hits": 15,
+      "false_alarms": 14
+    },
+    "HellaSwag": {
+      "d_prime": 1.0405961069966514,
+      "d_prime_ci95": [
+        0.48168363533078284,
+        1.7188731099507062
+      ],
+      "hit_rate": 0.6428571428571429,
+      "false_alarm_rate": 0.25,
+      "criterion_c": 0.15419169669775595,
+      "n_signal": 20,
+      "n_noise": 125,
+      "hits": 13,
+      "false_alarms": 31
+    },
+    "PIQA": {
+      "d_prime": 1.7340796578089566,
+      "d_prime_ci95": [
+        1.1000631139224097,
+        2.7636213969446537
+      ],
+      "hit_rate": 0.78125,
+      "false_alarm_rate": 0.16911764705882354,
+      "criterion_c": 0.09061806775655062,
+      "n_signal": 15,
+      "n_noise": 67,
+      "hits": 12,
+      "false_alarms": 11
+    },
+    "SocialIQa": {
+      "d_prime": 0.3433392135315521,
+      "d_prime_ci95": [
+        -0.22028270571445888,
+        0.8707694643953034
+      ],
+      "hit_rate": 0.5,
+      "false_alarm_rate": 0.3656716417910448,
+      "criterion_c": 0.17166960676577606,
+      "n_signal": 28,
+      "n_noise": 66,
+      "hits": 14,
+      "false_alarms": 24
+    },
+    "WinoGrande": {
+      "d_prime": 1.769623739502605,
+      "d_prime_ci95": [
+        1.169803559530075,
+        2.6692311599398018
+      ],
+      "hit_rate": 0.7380952380952381,
+      "false_alarm_rate": 0.12878787878787878,
+      "criterion_c": 0.2473277087889254,
+      "n_signal": 20,
+      "n_noise": 65,
+      "hits": 15,
+      "false_alarms": 8
+    },
+    "aNLI": {
+      "d_prime": 1.5841605124002807,
+      "d_prime_ci95": [
+        0.7842449811013135,
+        2.698666679061443
+      ],
+      "hit_rate": 0.7727272727272727,
+      "false_alarm_rate": 0.20149253731343283,
+      "criterion_c": 0.044221661436838144,
+      "n_signal": 10,
+      "n_noise": 66,
+      "hits": 8,
+      "false_alarms": 13
+    }
+  },
+  "science": {
+    "d_prime": 1.9506094321063623,
+    "d_prime_ci95": [
+      1.504185499106597,
+      2.463441957535025
+    ],
+    "hit_rate": 0.6323529411764706,
+    "false_alarm_rate": 0.05342465753424658,
+    "n_signal": 33,
+    "n_noise": 364,
+    "hits": 21,
+    "false_alarms": 19
+  },
+  "commonsense": {
+    "d_prime": 1.0427979040303779,
+    "d_prime_ci95": [
+      0.7761046491181514,
+      1.2902754308684554
+    ],
+    "hit_rate": 0.6150793650793651,
+    "false_alarm_rate": 0.2265625,
+    "n_signal": 125,
+    "n_noise": 447,
+    "hits": 77,
+    "false_alarms": 101
+  },
+  "entropy_conditioned": {
+    "median_logprob": -0.17314606413128786,
+    "confident_above_median": {
+      "d_prime": 1.1145643144080535,
+      "hit_rate": 0.5196078431372549,
+      "false_alarm_rate": 0.143348623853211,
+      "n_signal": 50,
+      "n_noise": 435
+    },
+    "uncertain_below_median": {
+      "d_prime": 1.4410245206650232,
+      "hit_rate": 0.6651376146788991,
+      "false_alarm_rate": 0.15517241379310345,
+      "n_signal": 108,
+      "n_noise": 376
+    }
+  },
+  "varentropy_conditioned": {
+    "median_varentropy": 1.0831247181385437,
+    "high_varentropy_far": 0.21866666666666668,
+    "high_n_noise": 375,
+    "low_varentropy_far": 0.0871559633027523,
+    "low_n_noise": 436
+  },
+  "probes": {
+    "layer_policy": "final-layer residual stream at final prompt token",
+    "n_probe_items_correct": 969,
+    "n_probe_items_appropriateness": 969,
+    "correctness_auroc": 0.7764831665860245,
+    "correctness_ci95": [
+      0.7375691386518599,
+      0.8129091322052138
+    ],
+    "appropriateness_auroc": 0.7463103788198846,
+    "appropriateness_ci95": [
+      0.7091365937033315,
+      0.7814351232344574
+    ],
+    "cosine_final_layer": 0.9353249073028564
+  }
+}
