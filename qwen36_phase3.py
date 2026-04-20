@@ -265,11 +265,11 @@ def run_e2(model, hidden_stack, idx_list, phase2, out_prefix):
     per_layer = []
     n_layers_plus_embed = hidden_stack.shape[1]
     t0 = time.time()
-    for l in range(n_layers_plus_embed):
+    for layer_idx in range(n_layers_plus_embed):
         Vs = []
         Hs = []
         for k in range(len(idx_list)):
-            h = torch.tensor(hidden_stack[k, l, :], dtype=torch.bfloat16,
+            h = torch.tensor(hidden_stack[k, layer_idx, :], dtype=torch.bfloat16,
                              device="cuda:0").unsqueeze(0)
             if norm_mod is not None:
                 h = norm_mod(h)
@@ -305,8 +305,8 @@ def run_e2(model, hidden_stack, idx_list, phase2, out_prefix):
         hi_far = far_of(hi_far_n)
         lo_far = far_of(lo_far_n)
         per_layer.append({
-            "layer": l,
-            "layer_frac": l / max(1, n_layers_plus_embed - 1),
+            "layer": layer_idx,
+            "layer_frac": layer_idx / max(1, n_layers_plus_embed - 1),
             "mean_H": float(Hs.mean()),
             "mean_V": float(Vs.mean()),
             "std_V": float(Vs.std()),
@@ -314,8 +314,8 @@ def run_e2(model, hidden_stack, idx_list, phase2, out_prefix):
             "high_V_far": hi_far, "high_V_n": len(hi_far_n),
             "low_V_far": lo_far, "low_V_n": len(lo_far_n),
         })
-        if (l + 1) % 5 == 0:
-            print(f"  layer {l}/{n_layers_plus_embed-1} meanV={Hs.mean():.3f} "
+        if (layer_idx + 1) % 5 == 0:
+            print(f"  layer {layer_idx}/{n_layers_plus_embed-1} meanV={Hs.mean():.3f} "
                   f"hi_far={hi_far} lo_far={lo_far} elapsed={time.time()-t0:.1f}s",
                   flush=True)
 
@@ -341,21 +341,21 @@ def run_e3(hidden_stack, idx_list, phase1, phase2, out_prefix):
     - Cross-validated AUROC using ONLY the global direction vs. using
       the per-domain direction, on held-out science/commonsense trials.
     """
-    print(f"\n[E3] task-dependent decomposition", flush=True)
+    print("\n[E3] task-dependent decomposition", flush=True)
     trial_by_idx = {t["idx"]: t for t in phase2}
     science = {"ARC-Challenge", "ARC-Easy"}
     commonsense = {"HellaSwag", "SocialIQa", "CosmosQA", "WinoGrande", "PIQA", "aNLI"}
 
     n_probe_layers = hidden_stack.shape[1]
     out_per_layer = []
-    for l in range(n_probe_layers):
+    for layer_idx in range(n_probe_layers):
         # Gather X, y with domain labels
         X_all, y_all, dom_all = [], [], []
         for k, i in enumerate(idx_list):
             t = trial_by_idx.get(int(i))
             if t is None:
                 continue
-            X_all.append(hidden_stack[k, l, :])
+            X_all.append(hidden_stack[k, layer_idx, :])
             y_all.append(int(t["appropriate"]))
             dom_all.append("sci" if t["dataset"] in science else "com" if t["dataset"] in commonsense else "oth")
         X_all = np.array(X_all, dtype=np.float32)
@@ -399,8 +399,8 @@ def run_e3(hidden_stack, idx_list, phase1, phase2, out_prefix):
         auroc_com_by_com = held_out_auroc(dom_all == "com", dom_all == "com")
 
         out_per_layer.append({
-            "layer": l,
-            "layer_frac": l / max(1, n_probe_layers - 1),
+            "layer": layer_idx,
+            "layer_frac": layer_idx / max(1, n_probe_layers - 1),
             "cos_global_sci": cos(w_glob, w_sci),
             "cos_global_com": cos(w_glob, w_com),
             "cos_sci_com": cos(w_sci, w_com),

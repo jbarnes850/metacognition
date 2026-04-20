@@ -537,7 +537,8 @@ def summarize(phase1, phase2, hidden_by_idx, out_prefix):
 
         # Direction + cosine at final layer
         def dir_of(Xl, yl):
-            pos = yl == 1; neg = yl == 0
+            pos = yl == 1
+            neg = yl == 0
             if pos.sum() < 2 or neg.sum() < 2:
                 return None
             w = Xl[pos].mean(0) - Xl[neg].mean(0)

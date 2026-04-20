@@ -234,7 +234,7 @@ class QwenRunner:
     def __init__(self, model_path):
         print(f"[runner] loading tokenizer from {model_path}", flush=True)
         self.tok = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-        print(f"[runner] loading model (bfloat16, device_map=cuda:0)...", flush=True)
+        print("[runner] loading model (bfloat16, device_map=cuda:0)...", flush=True)
         t0 = time.time()
         self.model = AutoModelForImageTextToText.from_pretrained(
             model_path,
@@ -585,15 +585,15 @@ def summarize(phase1, phase2, hidden_bank, n_layers, out_prefix):
         n_probe_layers = X.shape[1]
         correctness = []
         appropriateness = []
-        for l in range(n_probe_layers):
-            Xl = X[:, l, :]
+        for layer_idx in range(n_probe_layers):
+            Xl = X[:, layer_idx, :]
             mask_c = y_correct != -1
             mask_a = y_approp != -1
             auroc_c, lo_c, hi_c = cv_auroc(Xl[mask_c], y_correct[mask_c])
             auroc_a, lo_a, hi_a = cv_auroc(Xl[mask_a], y_approp[mask_a])
-            correctness.append({"layer": l, "layer_frac": l / (n_probe_layers - 1),
+            correctness.append({"layer": layer_idx, "layer_frac": layer_idx / (n_probe_layers - 1),
                                 "auroc": auroc_c, "ci_low": lo_c, "ci_high": hi_c})
-            appropriateness.append({"layer": l, "layer_frac": l / (n_probe_layers - 1),
+            appropriateness.append({"layer": layer_idx, "layer_frac": layer_idx / (n_probe_layers - 1),
                                     "auroc": auroc_a, "ci_low": lo_a, "ci_high": hi_a})
 
         best_c = max(correctness, key=lambda r: r["auroc"])

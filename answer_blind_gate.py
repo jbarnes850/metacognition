@@ -202,7 +202,7 @@ def build_critique_text(item, critique_type, answer_mode):
                 # Pick any wrong answer from the question options
                 import re
                 labels = re.findall(r'\(([A-Z])\)', item['question'])
-                wrong_labels = [l for l in labels if l != item['gold']]
+                wrong_labels = [label for label in labels if label != item['gold']]
                 wrong_target = wrong_labels[0] if wrong_labels else 'B'
                 return (
                     f"I think your answer may be wrong. {reasoning} "
@@ -256,7 +256,7 @@ def run_gate_experiment(model, tokenizer, items, model_name):
     print(f"  Accuracy: {n_correct}/{len(phase1)} = {accuracy*100:.1f}%")
 
     # Phase 2: Both conditions on each item
-    print(f"\n  Phase 2: Paired critique trials (answer-aware + answer-blind)...")
+    print("\n  Phase 2: Paired critique trials (answer-aware + answer-blind)...")
 
     results = {'aware': [], 'blind': []}
 
@@ -403,7 +403,7 @@ def main():
         metrics['elapsed_s'] = elapsed
 
         # Print results
-        print(f"\n  --- RESULTS ---")
+        print("\n  --- RESULTS ---")
         print(f"  Accuracy: {metrics['accuracy']*100:.1f}%")
         for mode in ['aware', 'blind']:
             cm = metrics['conditions'][mode]

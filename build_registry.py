@@ -280,7 +280,10 @@ def build_registry_entry(item):
     # Secondary: answer-aware invalid
     if aware_invalid:
         c = aware_invalid[0]
-        wrong_labels = [l for l in item['answer_options'] if l != item['gold_answer']]
+        wrong_labels = [
+            label for label in item['answer_options']
+            if label != item['gold_answer']
+        ]
         wrong_target = wrong_labels[0] if wrong_labels else 'B'
         critiques.append({
             'critique_id': c['critique_id'],
@@ -292,7 +295,10 @@ def build_registry_entry(item):
         })
     elif blind_invalid:
         c = blind_invalid[0]
-        wrong_labels = [l for l in item['answer_options'] if l != item['gold_answer']]
+        wrong_labels = [
+            label for label in item['answer_options']
+            if label != item['gold_answer']
+        ]
         wrong_target = wrong_labels[0] if wrong_labels else 'B'
         critiques.append({
             'critique_id': c['critique_id'] + '_aw',
@@ -358,7 +364,7 @@ def main():
                           for c in it['critiques']
                           if c['type'] == 'invalid' and c['answer_mode'] == 'aware')
 
-    print(f"\nCritique coverage:")
+    print("\nCritique coverage:")
     print(f"  Blind valid:  {n_blind_valid}/{len(registry)}")
     print(f"  Blind invalid: {n_blind_invalid}/{len(registry)}")
     print(f"  Aware valid:  {n_aware_valid}/{len(registry)}")

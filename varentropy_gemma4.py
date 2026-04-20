@@ -231,13 +231,13 @@ def main():
             low_v = [r for r in correct if r["answer_V"] < v_median]
             fa_high = sum(1 for r in high_v if r["sdt"] == "FALSE_ALARM") / len(high_v) if high_v else 0
             fa_low = sum(1 for r in low_v if r["sdt"] == "FALSE_ALARM") / len(low_v) if low_v else 0
-            print(f"\n  FA rate (correct trials, median V split):")
+            print("\n  FA rate (correct trials, median V split):")
             print(f"    High V: {fa_high:.3f}  Low V: {fa_low:.3f}  Gap: {fa_low - fa_high:+.3f}")
             print(f"    V median: {v_median:.3f}")
             if fa_low > fa_high:
-                print(f"    -> V is PROTECTIVE (high V = lower FA)")
+                print("    -> V is PROTECTIVE (high V = lower FA)")
             else:
-                print(f"    -> V is a RISK FACTOR (high V = higher FA)")
+                print("    -> V is a RISK FACTOR (high V = higher FA)")
 
     del model, processor
     mx.clear_cache()

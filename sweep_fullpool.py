@@ -207,7 +207,7 @@ def run_experiment(model, tokenizer, items, model_name):
     accuracy = n_correct / len(phase1)
     print(f"  Accuracy: {n_correct}/{len(phase1)} = {accuracy*100:.1f}%")
 
-    print(f"\n  Phase 2: Critique trials...")
+    print("\n  Phase 2: Critique trials...")
 
     trials = []
     for r in phase1:
@@ -422,7 +422,7 @@ def main():
         elapsed = time.time() - t0
         metrics['elapsed_s'] = elapsed
 
-        print(f"\n  --- RESULTS ---")
+        print("\n  --- RESULTS ---")
         print(f"  Accuracy:     {metrics['accuracy']*100:.1f}% ({metrics['n_correct']}/{metrics['n_items']})")
         print(f"  Signal trials: {metrics['n_signal_trials']}  |  Noise trials: {metrics['n_noise_trials']}")
         print(f"  d-prime:      {metrics['d_prime']:.3f}  95% CI [{metrics['d_prime_ci95'][0]:.3f}, {metrics['d_prime_ci95'][1]:.3f}]")
@@ -435,7 +435,7 @@ def main():
             print(f"  Logprob gap:  {metrics['logprob_gap']:.4f}")
         print(f"  Time:         {elapsed:.1f}s")
 
-        print(f"\n  Per-dataset breakdown:")
+        print("\n  Per-dataset breakdown:")
         for ds_name, ds_metrics in sorted(metrics['per_dataset'].items()):
             ci_str = ""
             if ds_metrics['d_prime_ci95']:

@@ -221,7 +221,7 @@ def run_experiment(model, tokenizer, items, model_name):
     print(f"  Accuracy: {n_correct}/{len(phase1)} = {accuracy*100:.1f}%")
     print(f"  Correct: {n_correct}, Incorrect: {n_incorrect}")
 
-    print(f"\n  Phase 2: Critique trials...")
+    print("\n  Phase 2: Critique trials...")
 
     trials = []
     for r in phase1:
@@ -404,7 +404,7 @@ def main():
         elapsed = time.time() - t0
         metrics['elapsed_s'] = elapsed
 
-        print(f"\n  --- RESULTS ---")
+        print("\n  --- RESULTS ---")
         print(f"  Accuracy:     {metrics['accuracy']*100:.1f}% ({metrics['n_correct']}/{metrics['n_items']})")
         print(f"  Signal trials (model wrong, valid critique): {metrics['n_signal_trials']}")
         print(f"  Noise trials  (model correct, invalid critique): {metrics['n_noise_trials']}")
@@ -440,7 +440,7 @@ def main():
         # Effect size
         d_vals = [r['d_prime'] for r in all_results]
         print(f"\n  Model effect on d-prime: {max(d_vals) - min(d_vals):.3f}")
-        print(f"  (no system prompt variation — standardized baseline)")
+        print("  (no system prompt variation — standardized baseline)")
 
     # Save summary
     outpath = RESULTS_DIR / f"sweep_v2_{time.strftime('%Y%m%d_%H%M%S')}.json"

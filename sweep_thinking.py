@@ -244,7 +244,7 @@ def run_experiment(model, tokenizer, items, model_name):
     print(f"  Think closed: {think_stats['closed']}/{len(phase1)}")
     print(f"  Avg thinking tokens: {think_stats['total_think_tokens']/len(phase1):.0f}")
 
-    print(f"\n  Phase 2: Critique trials with thinking...")
+    print("\n  Phase 2: Critique trials with thinking...")
 
     trials = []
     for r in phase1:
@@ -413,7 +413,7 @@ def main():
         elapsed = time.time() - t0
         metrics['elapsed_s'] = elapsed
 
-        print(f"\n  --- RESULTS (THINKING ON) ---")
+        print("\n  --- RESULTS (THINKING ON) ---")
         print(f"  Accuracy:     {metrics['accuracy']*100:.1f}%")
         print(f"  Signal: {metrics['n_signal_trials']}  |  Noise: {metrics['n_noise_trials']}")
         print(f"  d-prime:      {metrics['d_prime']:.3f}  95% CI [{metrics['d_prime_ci95'][0]:.3f}, {metrics['d_prime_ci95'][1]:.3f}]")

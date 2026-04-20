@@ -242,7 +242,7 @@ def run_probe_experiment(model_name, model_path):
     items = [items[int(i)] for i in indices]
     print(f"  Items: {len(items)}")
 
-    print(f"\n  Phase 1: Extracting hidden states for initial questions...")
+    print("\n  Phase 1: Extracting hidden states for initial questions...")
     phase1_data = []
 
     for i, item in enumerate(items):
@@ -284,7 +284,7 @@ def run_probe_experiment(model_name, model_path):
     accuracy = n_correct / len(phase1_data)
     print(f"  Accuracy: {n_correct}/{len(phase1_data)} = {accuracy*100:.1f}%")
 
-    print(f"\n  Phase 2: Running critique trials...")
+    print("\n  Phase 2: Running critique trials...")
     trials = []
 
     for d in phase1_data:
@@ -361,7 +361,7 @@ def run_probe_experiment(model_name, model_path):
     print(f"  Trials: {len(trials)}, Appropriate: {n_appropriate}/{len(trials)} = {n_appropriate/len(trials)*100:.1f}%")
 
     # Phase 3: Train probes at each layer
-    print(f"\n  Phase 3: Training layer-wise probes...")
+    print("\n  Phase 3: Training layer-wise probes...")
 
     # Probe 1: Correctness (replication of Moreno Cencerrado et al.)
     y_correct = np.array([int(d['correct']) for d in phase1_data if d['answer'] is not None])
