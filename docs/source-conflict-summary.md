@@ -41,6 +41,9 @@ the quality of the evidence from the authority of the source carrying it.
 Run the source-conflict extension from the repository root.
 
 ```bash
+cp config/models.env.example .env.models
+source .env.models
+
 python social_source_monitoring.py \
   --models Qwen3.5-9B,Qwen3.6-35B-A3B,Gemma4-26B-A4B-IT \
   --conditions congruent,conflict \

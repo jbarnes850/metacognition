@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import random
 import re
 import tempfile
@@ -31,6 +32,7 @@ from scipy.stats import norm
 
 
 RESULTS_DIR = Path("results/social_source_monitoring")
+MODEL_ROOT = Path(os.environ.get("METACOG_MODEL_ROOT", "models")).expanduser()
 SEED = 42
 MAX_TOKENS = 32
 QUESTION_SUFFIX = "\n\nAnswer with just the letter."
@@ -46,59 +48,80 @@ class ModelConfig:
     baseline_path: Path
     batch_size: int
     kv_quant_bits: int | None = None
+    model_path_env: str | None = None
+
+
+def configured_model_path(env_var: str, relative_default: str) -> Path:
+    return Path(os.environ.get(env_var, MODEL_ROOT / relative_default)).expanduser()
 
 
 MODEL_CONFIGS = {
     "Qwen3.5-0.8B": ModelConfig(
         name="Qwen3.5-0.8B",
         backend="mlx_lm",
-        model_path=Path("models/Qwen3.5-0.8B"),
+        model_path=configured_model_path("METACOG_QWEN35_08B_PATH", "Qwen3.5-0.8B"),
         baseline_path=Path("results/sweep_v3_fullpool/trials_0.8B.json"),
         batch_size=64,
+        model_path_env="METACOG_QWEN35_08B_PATH",
     ),
     "Qwen3.5-2B": ModelConfig(
         name="Qwen3.5-2B",
         backend="mlx_lm",
-        model_path=Path("models/Qwen3.5-2B"),
+        model_path=configured_model_path("METACOG_QWEN35_2B_PATH", "Qwen3.5-2B"),
         baseline_path=Path("results/sweep_v3_fullpool/trials_2B.json"),
         batch_size=64,
+        model_path_env="METACOG_QWEN35_2B_PATH",
     ),
     "Qwen3.5-4B": ModelConfig(
         name="Qwen3.5-4B",
         backend="mlx_lm",
-        model_path=Path("models/Qwen3.5-4B"),
+        model_path=configured_model_path("METACOG_QWEN35_4B_PATH", "Qwen3.5-4B"),
         baseline_path=Path("results/sweep_v3_fullpool/trials_4B.json"),
         batch_size=64,
+        model_path_env="METACOG_QWEN35_4B_PATH",
     ),
     "Qwen3.5-9B": ModelConfig(
         name="Qwen3.5-9B",
         backend="mlx_lm",
-        model_path=Path("models/Qwen3.5-9B"),
+        model_path=configured_model_path("METACOG_QWEN35_9B_PATH", "Qwen3.5-9B"),
         baseline_path=Path("results/sweep_v3_fullpool/trials_9B.json"),
         batch_size=32,
+        model_path_env="METACOG_QWEN35_9B_PATH",
     ),
     "Qwen3.6-35B-A3B": ModelConfig(
         name="Qwen3.6-35B-A3B",
         backend="mlx_lm",
-        model_path=Path("/Users/jarrodbarnes/models/qwen3.6-35b-a3b-mlx-int6"),
+        model_path=configured_model_path(
+            "METACOG_QWEN36_35B_A3B_PATH",
+            "qwen3.6-35b-a3b-mlx-int6",
+        ),
         baseline_path=Path("results/qwen36/qwen36_phase2.json"),
         batch_size=32,
+        model_path_env="METACOG_QWEN36_35B_A3B_PATH",
     ),
     "Gemma4-E4B-IT": ModelConfig(
         name="Gemma4-E4B-IT",
         backend="mlx_vlm",
-        model_path=Path("/Users/jarrodbarnes/models/gemma-4-E4B-it-mlx-int6"),
+        model_path=configured_model_path(
+            "METACOG_GEMMA4_E4B_IT_PATH",
+            "gemma-4-E4B-it-mlx-int6",
+        ),
         baseline_path=Path("results/sweep_gemma4/trials_Gemma4-E4B-IT.json"),
         batch_size=32,
         kv_quant_bits=4,
+        model_path_env="METACOG_GEMMA4_E4B_IT_PATH",
     ),
     "Gemma4-26B-A4B-IT": ModelConfig(
         name="Gemma4-26B-A4B-IT",
         backend="mlx_vlm",
-        model_path=Path("/Users/jarrodbarnes/models/gemma-4-26b-a4b-it-mlx-int6"),
+        model_path=configured_model_path(
+            "METACOG_GEMMA4_26B_A4B_IT_PATH",
+            "gemma-4-26b-a4b-it-mlx-int6",
+        ),
         baseline_path=Path("results/sweep_gemma4/trials_Gemma4-26B-A4B-IT.json"),
         batch_size=32,
         kv_quant_bits=4,
+        model_path_env="METACOG_GEMMA4_26B_A4B_IT_PATH",
     ),
 }
 
@@ -688,11 +711,16 @@ def run_model(
         baseline_path=config.baseline_path,
         batch_size=config.batch_size,
         kv_quant_bits=config.kv_quant_bits,
+        model_path_env=config.model_path_env,
     )
     if not config.baseline_path.exists():
         raise FileNotFoundError(f"Missing baseline trials: {config.baseline_path}")
     if not config.model_path.exists():
-        raise FileNotFoundError(f"Missing local model: {config.model_path}")
+        env_hint = f" Set {config.model_path_env}" if config.model_path_env else ""
+        raise FileNotFoundError(
+            f"Missing local model for {config.name}: {config.model_path}."
+            f"{env_hint} or METACOG_MODEL_ROOT to point at your model cache."
+        )
 
     baseline_trials = [
         t for t in load_json(config.baseline_path)

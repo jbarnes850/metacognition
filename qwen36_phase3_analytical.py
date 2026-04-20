@@ -51,7 +51,7 @@ import numpy as np
 from scipy.stats import norm
 from sklearn.metrics import roc_auc_score
 
-OUTPUT_DIR = Path(os.environ.get("QWEN_OUTPUT_DIR", "/work/results/qwen36"))
+OUTPUT_DIR = Path(os.environ.get("QWEN_OUTPUT_DIR", "results/qwen36"))
 OUT_PREFIX = "qwen36"
 SEED = 42
 

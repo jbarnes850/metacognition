@@ -1,0 +1,11 @@
+datasets
+matplotlib
+mlx-lm
+mlx-vlm
+numpy
+requests
+ruff
+scikit-learn
+scipy
+torch
+transformers

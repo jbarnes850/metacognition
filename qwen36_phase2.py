@@ -40,9 +40,9 @@ from transformers import AutoModelForImageTextToText, AutoTokenizer
 from datasets import load_dataset
 
 
-MODEL_PATH = os.environ.get("QWEN_MODEL_PATH", "/model")
+MODEL_PATH = os.environ.get("QWEN_MODEL_PATH", "models/qwen3.6-35b-a3b")
 MODEL_NAME = os.environ.get("QWEN_MODEL_NAME", "Qwen3.6-35B-A3B")
-OUTPUT_DIR = Path(os.environ.get("QWEN_OUTPUT_DIR", "/work/results/qwen36"))
+OUTPUT_DIR = Path(os.environ.get("QWEN_OUTPUT_DIR", "results/qwen36"))
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 MAX_ITEMS = int(os.environ.get("MAX_ITEMS", "0")) or None  # 0 or unset -> full pool

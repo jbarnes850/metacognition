@@ -34,7 +34,7 @@ from sklearn.model_selection import StratifiedKFold
 
 SERVER_URL = os.environ.get("SGLANG_URL", "http://127.0.0.1:30000")
 MODEL_NAME = os.environ.get("QWEN_MODEL_NAME", "Qwen3.6-35B-A3B")
-OUTPUT_DIR = Path(os.environ.get("QWEN_OUTPUT_DIR", "/work/results/qwen36"))
+OUTPUT_DIR = Path(os.environ.get("QWEN_OUTPUT_DIR", "results/qwen36"))
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 MAX_ITEMS = int(os.environ.get("MAX_ITEMS", "0")) or None
@@ -206,7 +206,8 @@ class SGLangClient:
         # Fetch chat template by asking sglang to tokenize a message set
         # (we do this client-side using a local tokenizer instead for speed)
         from transformers import AutoTokenizer
-        self.tok = AutoTokenizer.from_pretrained("/model", trust_remote_code=True)
+        model_path = os.environ.get("QWEN_MODEL_PATH", "models/qwen3.6-35b-a3b")
+        self.tok = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
 
     def _apply_template(self, messages):
         text = self.tok.apply_chat_template(
