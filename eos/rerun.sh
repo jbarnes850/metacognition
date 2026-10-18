@@ -42,6 +42,7 @@ python3 -m eos.analyze
 python3 -m eos.report
 if [ "${1:-}" != "--rescore" ]; then
   git diff --quiet -- eos_results/analysis.json eos_results/numbers.json eos_results/stimulus_audit.json \
+    eos_results/legacy_false_flaw_qids.json \
     || { echo "recomputed results differ from the committed files:"; git diff --stat -- eos_results; exit 1; }
-  echo "rerun: analysis.json, numbers.json and stimulus_audit.json match the committed files"
+  echo "rerun: analysis, numbers, stimulus audit, and false-flaw list match the committed files"
 fi

@@ -59,7 +59,7 @@ Recompute every reported number from the committed per-trial files. CPU only, ab
 uv run --no-project --python 3.12 --with-requirements eos/requirements.txt eos/rerun.sh
 ```
 
-Without `uv`, install `eos/requirements.txt` into a Python 3.12 environment and run `bash eos/rerun.sh`. The script checks the hashes of `eos_data/legacy_raw/`, reruns the stimulus audit, the analysis, and the report, and confirms that `eos_results/analysis.json`, `eos_results/numbers.json`, and `eos_results/stimulus_audit.json` match the committed files. The pinned versions reproduce them byte for byte; other scikit-learn versions can move the audit AUROC in the third decimal.
+Without `uv`, install `eos/requirements.txt` into a Python 3.12 environment and run `bash eos/rerun.sh`. The script checks the hashes of `eos_data/legacy_raw/`, reruns the stimulus audit, the analysis, and the report, and confirms that `eos_results/analysis.json`, `numbers.json`, `stimulus_audit.json`, and `legacy_false_flaw_qids.json` match the committed files. The pinned versions reproduce them byte for byte; other scikit-learn versions can move the audit AUROC in the third decimal.
 
 Rerun every GPU job (hours on one GPU):
 

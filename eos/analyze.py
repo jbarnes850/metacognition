@@ -306,6 +306,12 @@ def legacy_reanalysis():
     n_ff_own = sum(1 for it in items.values() if it["invalid_critique"]["type"] == "false_flaw"
                    and it["invalid_critique"]["wrong_target"] == it["gold"])
     out["false_flaw_items"] = {"n": n_ff, "target_equals_gold": n_ff_own, "pool": len(items)}
+    ff_qids = sorted(q for q, it in items.items() if it["invalid_critique"]["type"] == "false_flaw")
+    Path("eos_results/legacy_false_flaw_qids.json").write_text(json.dumps({
+        "note": "Items in the published 969-item pool whose invalid critique is a false-flaw note that recommends the "
+                "gold answer (eos/legacy.py, a copy of sweep_fullpool.prepare_items). On an invalid-critique trial the "
+                "model already holds the gold answer, so keeping it agrees with the critique.",
+        "n": len(ff_qids), "pool": len(items), "qids": ff_qids}, indent=1) + "\n")
     d = json.load(open(raw / "social_source_monitoring/social_source_combined_20260420_094000_with_ci.json"))
     for m in sorted({r["model"] for r in d["records"]}):
         row = {}
