@@ -27,9 +27,14 @@ Gemma4 26B-A4B also degrades, but retains more of the evidence signal.
 
 | Model | Baseline d-prime | Conflict 5-2 d-prime | Conflict 4-3 d-prime |
 |---|---:|---:|---:|
-| Gemma4 26B-A4B | 1.479 [1.156, 1.881] | 0.597 [0.248, 0.990] | not run |
-| Qwen3.5 9B | 1.527 [1.169, 1.942] | -0.104 [-0.420, 0.209] | 0.630 [0.302, 0.955] |
-| Qwen3.6 35B-A3B | 1.222 [0.908, 1.592] | 0.326 [-0.024, 0.672] | 0.665 [0.344, 1.008] |
+| Gemma4 26B-A4B | 1.465 [1.117, 1.872] | 0.573 [0.219, 0.973] | not run |
+| Qwen3.5 9B | 1.433 [1.069, 1.880] | -0.099 [-0.432, 0.240] | 0.630 [0.302, 0.955] |
+| Qwen3.6 35B-A3B | 1.075 [0.718, 1.457] | 0.244 [-0.103, 0.601] | 0.665 [0.344, 1.008] |
+
+Baseline and 5-2 columns exclude invalid-critique trials that used one of the
+148 critiques recommending the answer the model already held
+([`eos_results/legacy_false_flaw_qids.json`](../eos_results/legacy_false_flaw_qids.json)).
+The 4-3 column uses all trials; its trial files were not available to re-score.
 
 The result changes the interpretation of the original benchmark. The failure
 is not only that models cave to critique or stubbornly hold their prior. The

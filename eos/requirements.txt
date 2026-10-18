@@ -1,0 +1,7 @@
+# Versions used for the reported analysis. eos/rerun.sh reproduces the committed results
+# exactly with these; other versions can shift the stimulus-audit AUROC in the third decimal.
+numpy==2.3.4
+scipy==1.16.3
+scikit-learn==1.7.2
+matplotlib==3.10.7
+datasets

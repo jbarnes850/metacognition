@@ -1,0 +1,7 @@
+# Pre-registration amendment 1
+
+Committed 2026-10-17 about 20:55, before any held-out revise-or-resist trial was scored. Main-arm training had started; no adapter existed yet.
+
+1. **S2A deletes the evidence.** In a 26-trial smoke (held-out subset items, `runs/s2a_smoke_verbatim.jsonl.gz`), every verbatim-S2A rewrite kept the question and dropped the critique, and 1 of 24 cue trials kept any cue wording. Verbatim S2A therefore reduces the task to re-answering the question. It stays as the faithful baseline, and an evidence-preserving variant (`s2aev`, prompt in `eos/s2a.py`) is added on the same subset and conditions. For both, the share of critique-specific words kept in the rewrite is reported.
+2. **Evidence-use check.** A policy that ignores the critique and re-answers from its own knowledge can score well in the crossed design, because assigned wrong initial answers are often ones the model would not choose. In the own-answer design the critique is the only new information: a policy that ignores it repeats its own wrong answer and misses. H3 gains a fourth condition: main's own-answer no-cue hit rate drops by no more than 0.05 against base. Own-answer trials are also scored for nocue.
+3. **Training memory.** The main run at micro-batch 8 used 44 GB, at the 45 GB cap. Training uses micro-batch 4 with 4 accumulation steps: the same 16 examples per optimizer step and the same update rule.

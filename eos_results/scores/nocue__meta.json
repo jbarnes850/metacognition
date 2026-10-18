@@ -1,0 +1,56 @@
+{
+ "runs": [
+  {
+   "model": "Qwen/Qwen3.5-4B",
+   "adapter": "runs/nocue",
+   "system": null,
+   "adapter_sha256": "efbf6e27df44bd52e87f9264be098375add7b3bc31cf12d8d95f33474827a6e3",
+   "torch": "2.13.0+cu130",
+   "started": "2026-10-18T06:01:12",
+   "files": {
+    "eos_results/scores/nocue__eval_own.jsonl.gz": {
+     "input": "eos_data/trials/eval_own.jsonl.gz",
+     "n": 10764,
+     "input_sha256": "932e13e19cee1ac61a25ab0bbc0e20e56ab90c84988aba6c251cf42c198d4254",
+     "seconds": 1477.4
+    }
+   },
+   "finished": "2026-10-18T06:25:49"
+  },
+  {
+   "model": "Qwen/Qwen3.5-4B",
+   "adapter": "runs/nocue",
+   "system": null,
+   "adapter_sha256": "efbf6e27df44bd52e87f9264be098375add7b3bc31cf12d8d95f33474827a6e3",
+   "torch": "2.13.0+cu130",
+   "started": "2026-10-18T06:27:49",
+   "files": {
+    "eos_results/scores/nocue__clean_matched.jsonl.gz": {
+     "input": "eos_data/trials/clean_matched.jsonl.gz",
+     "n": 649,
+     "input_sha256": "44fc71b207d69031069b3bb14f3c912dfbeb32142b97367d2c60864876ab354f",
+     "seconds": 95.8
+    }
+   },
+   "finished": "2026-10-18T06:29:25"
+  },
+  {
+   "model": "Qwen/Qwen3.5-4B",
+   "adapter": "runs/nocue",
+   "system": null,
+   "adapter_sha256": "efbf6e27df44bd52e87f9264be098375add7b3bc31cf12d8d95f33474827a6e3",
+   "torch": "2.13.0+cu130",
+   "started": "2026-10-18T12:28:46",
+   "files": {
+    "eos_results/scores/nocue__eval_core.jsonl.gz": {
+     "input": "eos_data/trials/eval_core.jsonl.gz",
+     "n": 31464,
+     "input_sha256": "9a0792f56af228426194e11874c2ac534b215f30dce322595e7b73d5a40d9df8",
+     "seconds": 1706.3
+    }
+   },
+   "finished": "2026-10-18T12:57:13",
+   "peak_reserved_gb": 20.51
+  }
+ ]
+}

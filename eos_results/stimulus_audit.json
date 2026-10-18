@@ -1,0 +1,19 @@
+{
+  "legacy_full_text": {
+    "n": 1938,
+    "auroc": 0.9999850899025625,
+    "length_auroc": 0.36488895704933433
+  },
+  "legacy_no_false_flaw": {
+    "n": 1790,
+    "auroc": 0.9999786311088318
+  },
+  "legacy_reasoning_only": {
+    "auroc": 0.9911439346256128
+  },
+  "matched_voice": {
+    "n": 1298,
+    "auroc": 0.5388116362496765,
+    "length_auroc": 0.48441243016991886
+  }
+}

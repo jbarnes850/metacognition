@@ -16,19 +16,23 @@ ordinary accuracy hides:
 - discriminating good evidence from bad evidence
 
 The accompanying write-up is here:
-[Do Language Models Know When to Change Their Mind?](https://jbarnes850.github.io/2026/03/20/do-models-know-when-to-change-their-mind.html)
+[Do Language Models Know When to Change Their Mind?](https://jbarnes850.github.io/2026/03/20/do-models-know-when-to-change-their-mind/)
 
 ## What Is In This Repo
 
 The repo contains a matched evaluation registry, MLX-based local inference
-runners, behavior metrics, simple mechanistic probes, uncertainty analyses, and
-a source-monitoring extension.
+runners, behavior metrics, simple mechanistic probes, uncertainty analyses, a
+source-monitoring extension, and a training study.
 
 The source-monitoring extension asks a second question: did the model update
 because the evidence was good, or because a social source told it to? It keeps
 the critique text fixed and adds a reviewer-panel cue that either agrees or
 conflicts with critique validity. See
 [`docs/source-conflict-summary.md`](docs/source-conflict-summary.md).
+
+The training study asks whether fine-tuning can make Qwen3.5 4B ignore the
+source while still using the evidence, including for cue types and a domain it
+never trained on. See [`docs/evidence-over-source.md`](docs/evidence-over-source.md).
 
 ## Main Results
 
@@ -38,21 +42,32 @@ well the model separates valid critique from invalid critique.
 
 | Model | Accuracy | d-prime | 95% CI | Hit Rate | FA Rate | Criterion c |
 |---|---:|---:|---:|---:|---:|---:|
-| Qwen3.5 0.8B | 47.3% | 1.549 | [1.24, 2.17] | 0.993 | 0.820 | -1.69 |
-| Qwen3.5 2B | 59.0% | 1.059 | [0.77, 1.54] | 0.986 | 0.873 | -1.67 |
-| Qwen3.5 4B | 68.5% | 1.652 | [1.41, 1.96] | 0.956 | 0.521 | -0.88 |
-| Qwen3.5 9B | 79.2% | 1.785 | [1.54, 2.09] | 0.924 | 0.361 | -0.54 |
-| Gemma4 E4B | 71.5% | 1.818 | [1.59, 2.09] | 0.933 | 0.375 | -0.59 |
-| Gemma4 26B-A4B | 78.2% | 1.636 | [1.43, 1.85] | 0.637 | 0.099 | +0.47 |
+| Qwen3.5 0.8B | 47.3% | 0.651 | [0.27, 1.28] | 0.993 | 0.965 | -2.14 |
+| Qwen3.5 2B | 59.0% | 0.563 | [0.23, 1.05] | 0.986 | 0.949 | -1.92 |
+| Qwen3.5 4B | 68.5% | 1.505 | [1.26, 1.81] | 0.956 | 0.579 | -0.95 |
+| Qwen3.5 9B | 79.2% | 1.664 | [1.42, 1.97] | 0.924 | 0.408 | -0.60 |
+| Gemma4 E4B | 71.5% | 1.713 | [1.50, 2.00] | 0.933 | 0.416 | -0.64 |
+| Gemma4 26B-A4B | 78.2% | 1.608 | [1.40, 1.84] | 0.637 | 0.104 | +0.45 |
+| Qwen3.6 35B-A3B | 83.7% | 1.268 | [1.04, 1.50] | 0.619 | 0.168 | +0.33 |
+
+An audit found that 148 of the 969 critiques, all of the "Consider whether"
+kind, recommended the answer the model already held, so holding it was
+agreement rather than resistance. The table excludes the invalid-critique
+trials that used those critiques;
+[`eos_results/legacy_false_flaw_qids.json`](eos_results/legacy_false_flaw_qids.json)
+lists them.
 
 The short version:
 
-- Competence scales before control. Qwen3.5 2B is more accurate than 0.8B but
-  more vulnerable to invalid critique.
-- Architecture changes the failure mode. Gemma4 E4B discriminates well, while
-  Gemma4 26B-A4B is much more conservative.
+- Small models accept almost every critique. Qwen3.5 0.8B and 2B accept 95% to
+  97% of invalid critiques; discrimination appears at 4B.
+- Capable models differ mainly in criterion. Gemma4 26B-A4B holds readily and
+  misses valid corrections; Qwen3.5 9B and Gemma4 E4B revise readily.
 - Source pressure can erase discrimination. Under conflict cues, Qwen3.5 9B
-  falls near zero d-prime, while Qwen3.6 and Gemma4 26B retain partial signal.
+  falls near zero d-prime, while Gemma4 26B-A4B retains partial signal.
+- In Qwen3.5 4B, consistency training removes the source effect for unseen cue
+  types while keeping critique use. Training on correct answers removes it by making the
+  model ignore the critique.
 
 ## Repository Layout
 
@@ -74,6 +89,11 @@ registry/                         Matched item registry and manifest
 results/qwen36/                   Tracked Qwen3.6 summary artifacts
 docs/source-conflict-summary.md   Source-monitoring experiment note
 tests/                            Unit tests for reusable analysis logic
+eos/                              Training study: stimuli, scoring, training, analysis
+eos_data/                         Training study items, trial files, original per-trial files
+eos_results/                      Training study per-trial decisions and analysis
+docs/evidence-over-source.md      Training study note, results, and reproduction
+docs/preregistration/             Training study pre-registration and amendments
 ```
 
 Generated sweep outputs live under `results/` and are ignored by default unless
@@ -202,6 +222,9 @@ python social_source_monitoring.py --dry-run --models Qwen3.5-9B
 - Published source-conflict numbers are based on timestamped JSON outputs from
   `social_source_monitoring.py`; the script records trial-level rows and
   bootstrap confidence intervals in each output file.
+- The training study tracks its per-trial files. `eos/rerun.sh` recomputes
+  every reported number from them on CPU and checks the result against the
+  committed analysis; see [`docs/evidence-over-source.md`](docs/evidence-over-source.md).
 
 ## Citation
 
@@ -210,7 +233,7 @@ python social_source_monitoring.py --dry-run --models Qwen3.5-9B
   author = {Barnes, Jarrod},
   title = {Do Language Models Know When to Change Their Mind?},
   year = {2026},
-  url = {https://jbarnes850.github.io/2026/03/20/do-models-know-when-to-change-their-mind.html}
+  url = {https://jbarnes850.github.io/2026/03/20/do-models-know-when-to-change-their-mind/}
 }
 ```
 

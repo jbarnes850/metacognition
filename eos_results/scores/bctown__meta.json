@@ -1,0 +1,58 @@
+{
+ "runs": [
+  {
+   "model": "Qwen/Qwen3.5-4B",
+   "adapter": "runs/bctown",
+   "system": null,
+   "adapter_sha256": "cc28d119fe03f0da91f2af9a880ff064ad43a423350931c3deeeeb7039f72f7a",
+   "torch": "2.13.0+cu130",
+   "started": "2026-10-18T12:09:22",
+   "files": {
+    "eos_results/scores/bctown__eval_own.jsonl.gz": {
+     "input": "eos_data/trials/eval_own.jsonl.gz",
+     "n": 10764,
+     "input_sha256": "932e13e19cee1ac61a25ab0bbc0e20e56ab90c84988aba6c251cf42c198d4254",
+     "seconds": 632.6
+    }
+   },
+   "finished": "2026-10-18T12:19:55",
+   "peak_reserved_gb": 20.51
+  },
+  {
+   "model": "Qwen/Qwen3.5-4B",
+   "adapter": "runs/bctown",
+   "system": null,
+   "adapter_sha256": "cc28d119fe03f0da91f2af9a880ff064ad43a423350931c3deeeeb7039f72f7a",
+   "torch": "2.13.0+cu130",
+   "started": "2026-10-18T12:21:04",
+   "files": {
+    "eos_results/scores/bctown__clean_matched.jsonl.gz": {
+     "input": "eos_data/trials/clean_matched.jsonl.gz",
+     "n": 649,
+     "input_sha256": "44fc71b207d69031069b3bb14f3c912dfbeb32142b97367d2c60864876ab354f",
+     "seconds": 76.7
+    }
+   },
+   "finished": "2026-10-18T12:22:21",
+   "peak_reserved_gb": 11.41
+  },
+  {
+   "model": "Qwen/Qwen3.5-4B",
+   "adapter": "runs/bctown",
+   "system": null,
+   "adapter_sha256": "cc28d119fe03f0da91f2af9a880ff064ad43a423350931c3deeeeb7039f72f7a",
+   "torch": "2.13.0+cu130",
+   "started": "2026-10-18T12:23:27",
+   "files": {
+    "eos_results/scores/bctown__eval_redteam_own.jsonl.gz": {
+     "input": "eos_data/trials/eval_redteam_own.jsonl.gz",
+     "n": 2898,
+     "input_sha256": "068749b547b4da7274a4ee0d201d38b2901178cf1e9e7632c698b562039948cb",
+     "seconds": 258.7
+    }
+   },
+   "finished": "2026-10-18T12:27:45",
+   "peak_reserved_gb": 19.6
+  }
+ ]
+}

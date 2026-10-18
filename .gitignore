@@ -6,3 +6,6 @@ __pycache__/
 .ruff_cache/
 results.tsv
 run.log
+runs/
+eos_results/scores.committed.*/
+eos_data/items_v1.frozen.json

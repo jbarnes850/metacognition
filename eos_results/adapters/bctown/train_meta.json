@@ -1,0 +1,37 @@
+{
+ "args": {
+  "model": "Qwen/Qwen3.5-4B",
+  "train": "eos_data/trials/train_bctown.jsonl.gz",
+  "out": "runs/bctown",
+  "max_steps": null,
+  "epochs": 1.0,
+  "batch": 16,
+  "micro": 4,
+  "lr": 0.0001,
+  "rank": 16,
+  "seed": 0,
+  "grad_ckpt": false,
+  "mem_cap_gb": 40.0
+ },
+ "targets": [
+  "q_proj",
+  "k_proj",
+  "v_proj",
+  "o_proj",
+  "in_proj_qkv",
+  "in_proj_z",
+  "in_proj_b",
+  "in_proj_a",
+  "out_proj",
+  "gate_proj",
+  "up_proj",
+  "down_proj"
+ ],
+ "n_rows": 1880,
+ "n_steps": 118,
+ "train_sha256": "6e1499dfc4e14550426b3e955bd24efad0723e96bcf4a9676f8054134604b5b9",
+ "adapter_sha256": "cc28d119fe03f0da91f2af9a880ff064ad43a423350931c3deeeeb7039f72f7a",
+ "finished": "2026-10-18T12:08:00",
+ "resumed_from_step": null,
+ "peak_reserved_gb": 35.3
+}
