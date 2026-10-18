@@ -2,7 +2,8 @@
 """
 Test whether varentropy adds predictive signal for revision behavior.
 
-For each model (0.8B, 2B, 4B, 9B) on 150 ARC-Challenge items:
+For each model (0.8B, 2B, 4B, 9B) on the 150 registry items (registry/v1_items.json,
+all eight datasets):
 1. Extract logit vector at the answer token position before critique
 2. Compute entropy H and varentropy V from the softmax distribution
 3. Test whether V predicts revision behavior above and beyond H alone

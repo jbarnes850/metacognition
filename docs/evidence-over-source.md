@@ -82,7 +82,7 @@ eos/analyze.py, report.py                   Every reported number, tables, and f
 eos/rerun.sh, run_gpu.sh                    Reproduction
 eos_data/items_v1.json                      Frozen items
 eos_data/trials/                            Trial and training files
-eos_data/legacy_raw/                        Per-trial files of the original sweep and panel runs, with hashes
+eos_data/legacy_raw/                        Per-trial files of the original sweep, Qwen3.6, varentropy, and panel runs, with hashes
 eos_results/scores/                         Per-trial decisions for every arm and condition, with run metadata
 eos_results/adapters/                       Adapter hashes, configs, and training logs (weights not included)
 eos_results/legacy_false_flaw_qids.json     The 148 original critiques that recommended the answer already held

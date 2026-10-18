@@ -222,6 +222,9 @@ python social_source_monitoring.py --dry-run --models Qwen3.5-9B
 - Published source-conflict numbers are based on timestamped JSON outputs from
   `social_source_monitoring.py`; the script records trial-level rows and
   bootstrap confidence intervals in each output file.
+- Per-trial files behind the post's sweep table, Qwen3.6 row, varentropy figure,
+  and panel results are tracked under `eos_data/legacy_raw/`, with SHA-256
+  hashes in `eos_data/legacy_raw/SHA256SUMS`.
 - The training study tracks its per-trial files. `eos/rerun.sh` recomputes
   every reported number from them on CPU and checks the result against the
   committed analysis; see [`docs/evidence-over-source.md`](docs/evidence-over-source.md).
